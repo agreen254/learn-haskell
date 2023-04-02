@@ -1,0 +1,71 @@
+Everything must produce a value
+There must be an else statement in an if-else block
+Can infix a function:
+  div 92 10 -> 9
+  92 `div` 10 -> 9
+Not equals denoted as /=
+The successor function succ returns any valid successor for the input
+  succ 9 -> 10
+min and max only take two arguments
+use :l {name} to load a script into ghci
+if-else syntax:
+  doubleSmallNumber x = 
+    if x > 100
+    then x
+    else x*2
+We use a single-quote ' at the end of a function to either denote a strict version of the function (one that isnt lazy) or slightly modified version
+Cannot start any function with an uppercase character
+Use the 'let' keyword in ghci to define a name
+Lists are of a homogenous type
+  Can append to a list with the '++' operator
+  But to do this, Haskell must walk through the entire left side of the list
+  So if you add a single thing to the end of a 50 million item list, it will take a while
+  Using the ':' operator (called 'cons'), however, will put something at the beginning of a list immediately
+  This must be a single item, such as a character or an individual number
+The index of operator is '!!'
+  nums = [1, 2, 3]
+  nums !! 1 -> 2
+Lists can be compared by the elements in their lexicographical order
+  If the first elements are equal, then the next corresponding elements will be checked, etc
+  a = [3, 2, 1]
+  b = [2, 1, 0]
+  a > b --> True
+
+  c = [2, 100, 500]
+  a > c --> True
+Some rudimentary list functions:
+  l = [5, 4, 3, 2, 1]
+  head l --> 5
+
+  tail l --> [4, 3, 2, 1]
+
+  last l --> 1
+
+  init l --> [5, 4, 3, 2]
+
+  length l --> 5
+
+  null l --> False
+
+  reverse l --> [1, 2, 3, 4, 5]
+
+  take 3 l --> [5, 4, 3]
+  take 1 l --> [5]
+  take 10000 l --> [5, 4, 3, 2, 1]  // will only take as many eles are in the list if we specify more
+  take 0 l --> []
+
+  drop 3 l --> [2, 1]
+  drop 1 l --> [4, 3, 2, 1]
+  drop 100 l --> []
+  drop 0 l --> [5, 4, 3, 2, 1]
+
+  minimum l --> 1
+  
+  maximum l --> 5
+
+  sum l --> 15
+
+  product l --> 120
+
+  elem 4 l --> True
+  10 `elem` l --> False
