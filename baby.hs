@@ -37,3 +37,13 @@ charsOne = ['a' .. 'z']
 charsTwo = reverse ['K' .. 'P']
 
 numsSeven = [1, 3 .. 21]
+
+numsEight = [20, 19 .. 1]
+
+compOne = [x*2 | x <- [1..10]]
+
+compTwo = [x*2 | x <- [1..10], x*2 >= 12]
+
+compThree = [x | x <- [50..100], x `mod` 7 == 3]
+
+boomBangs xs = [if x < 10 then "BOOM!" else "BANG!" | x <- xs, odd x]

@@ -69,3 +69,29 @@ Some rudimentary list functions:
 
   elem 4 l --> True
   10 `elem` l --> False
+List Ranges can also be specified with the '..' operator
+  l = [1..20] --> [1, 2, 3, 4, 5, .. , 20]
+  l = [20, 19 .. 1] --> [20, 19, 18, 17, .. , 1]
+  Do not use floating point numbers in list ranges! You can get some weird numbers!'
+  l = [1, 3 .. 21] --> [1, 3, 5, 7, 9, .. , 21] Note that this does not increment by 3s! It uses 1 and 3 as the first two terms and then takes the difference to use as the step!
+  To increment by threes, we would do [1, 4 .. 21]
+Infinite Lists
+  Haskell is lazy, so it will not try to immediately evaluate a list you specify as infinite
+  Say we want the first 24 multiples of 13
+  We could do:  [13, 26 .. 24 * 13]
+  The better ways is to do:  take 24 [13, 26 ..]
+
+  cycle takes a list and cycles it into an infinite list
+  do not try to display the list, because it goes on forever
+  must slice it off somehwere
+  take 10 (cycle [1, 2, 3]) --> [1, 2, 3, 1, 2, 3, 1, 2, 3, 1]
+
+  take 12 (cycle "LOL ") --> "LOL LOL LOL "
+
+  repeat takes an element and produces and infinite list of only that element
+  take 10 (repeat 5) --> [5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+We can specify more detailed list comprehensions that are very similar to mathematical notation
+  [x*2 | x <- [1..10]] means to double every number drawn from the set [1..10]
+
+  we can add a condition (also called a predicate), too
+  they go after the binding parts and are separated from them by a comma
